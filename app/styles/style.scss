@@ -1,7 +1,4 @@
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-html, body {
-}
+@import "settings";
+@import "theme";
+@import "basics";
+@import "views/home";

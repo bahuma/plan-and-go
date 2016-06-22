@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon.ico">
     <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 
     <!-- build:css(app) styles/vendor.css -->
     <!-- bower:css -->
@@ -20,7 +22,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <!-- endbuild -->
 </head>
-<body ng-app="hornglassApp">
+<body ng-app="planAndGo">
 
 <div ng-view=""></div>
 
@@ -39,6 +41,8 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/config/routeProvider.js"></script>
+<script src="scripts/config/mdThemingProvider.js"></script>
+<script src="scripts/controllers/homeCtrl.js"></script>
 <!-- endbuild -->
 </body>
 </html>

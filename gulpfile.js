@@ -19,7 +19,7 @@ var yeoman = {
 
 var paths = {
   scripts: [yeoman.app + '/scripts/**/*.js'],
-  styles: [yeoman.app + '/styles/**/*.scss'],
+  styles: [yeoman.app + '/styles/**/[^_]*.scss'],
   views: {
     main: yeoman.app + '/index.html',
     files: [yeoman.app + '/views/**/*.html']
@@ -93,6 +93,13 @@ gulp.task('styles', function () {
     .pipe(styles());
 });
 
+gulp.task('styles:serve', function () {
+  return gulp.src(paths.styles)
+    .pipe($.plumber())
+    .pipe(styles())
+    .pipe($.connect.reload());
+});
+
 gulp.task('lint:scripts', function () {
   return gulp.src(paths.scripts)
     .pipe(lintScripts());
@@ -116,10 +123,7 @@ gulp.task('start:server', function() {
 });
 
 gulp.task('watch', function () {
-  $.watch(paths.styles)
-    .pipe($.plumber())
-    .pipe(styles())
-    .pipe($.connect.reload());
+  gulp.watch([yeoman.app + '/styles/**/*.scss'], ['styles:serve']);
 
   $.watch(paths.views.files)
     .pipe($.plumber())

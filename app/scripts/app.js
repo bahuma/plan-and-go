@@ -1,5 +1,6 @@
 'use strict';
 
 angular.module('planAndGo', [
-  'ngRoute'
+  'ngRoute',
+  'ngMaterial'
 ]);

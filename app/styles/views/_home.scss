@@ -1,0 +1,60 @@
+.view-home {
+  .app-name {
+    margin-top: 36px;
+    margin-bottom: 36px;
+
+    img {
+      float: left;
+      width: 20%;
+      margin-right: 5%;
+    }
+
+    .text {
+      float: left;
+      width: 75%;
+    }
+  }
+
+  .features {
+    padding: 20px 0;
+    md-card {
+      md-card-content {
+        p {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .login-container {
+    margin-top: 36px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  footer {
+    background: #2d2d2d;
+    color: #FFF;
+
+    .container {
+      padding: 20px;
+    }
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+
+      a {
+        color: #FFF;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
