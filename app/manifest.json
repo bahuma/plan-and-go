@@ -1,0 +1,30 @@
+{
+  "name": "Plan and Go",
+  "short_name": "Plan and Go",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#e30815",
+  "background_color": "#99ff99",
+  "start_url": "/#/",
+  "display": "standalone"
+}
