@@ -14,7 +14,7 @@
         <md-card-content flex layout="column">
           <h2>{{plan.title}}</h2>
           <p flex>{{plan.description}}</p>
-          <md-button ng-href="#/create/{{plan.slug}}" class="md-raised md-primary" ng-disabled="{{!plan.available}}">
+          <md-button ng-href="#/create/{{plan.slug}}" class="md-raised md-primary" ng-disabled="!plan.available">
             <md-tooltip md-direction="top" ng-if="!plan.available">
               Bald verfügbar
             </md-tooltip>
