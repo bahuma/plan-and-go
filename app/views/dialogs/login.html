@@ -1,0 +1,31 @@
+<md-dialog>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Login</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="loginCtrl.cancel()" aria-label="Schliessen">
+        <md-icon>close</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <div ng-show="loginCtrl.user.isAnonymous">
+        <p>Einloggen mit</p>
+        <md-button ng-click="loginCtrl.signInWith('google')">Google-Konto</md-button>
+        <md-button ng-click="loginCtrl.signInWith('facebook')">Facebook</md-button>
+        <md-button ng-click="loginCtrl.signInWith('twitter')">Twitter</md-button>
+        <div class="error" ng-show="loginCtrl.error">
+          {{loginCtrl.error.message}}
+        </div>
+      </div>
+      <div ng-hide="loginCtrl.user.isAnonymous">
+        <md-button ng-click="loginCtrl.logout()">Logout</md-button>
+      </div>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions>
+    <span flex></span>
+    <md-button ng-click="loginCtrl.cancel()">Schließen</md-button>
+  </md-dialog-actions>
+</md-dialog>

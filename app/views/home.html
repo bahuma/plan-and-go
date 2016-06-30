@@ -1,6 +1,3 @@
-<div ng-controller="TestCtrl as testCtrl">
-  test {{testCtrl.firebaseUser | json}}
-</div>
 <div class="view-home">
   <div class="app-name container clearfix">
     <img src="../images/icons/icon-384.png">
@@ -29,7 +26,11 @@
   </div>
 
   <div class="login-container container">
-    <md-button class="md-raised md-primary">Login</md-button>
+    <md-button class="md-raised md-primary" ng-click="homeCtrl.showLoginDialog($event)" ng-show="homeCtrl.user.isAnonymous">Login</md-button>
+    <div ng-hide="homeCtrl.user.isAnonymous">
+      Eingeloggt als {{homeCtrl.user.displayName}}<br>
+      <md-button class="md-raised md-primary" href="#/dashboard">Zum Dashboard</md-button>
+    </div>
   </div>
 
   <footer>
