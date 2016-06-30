@@ -8,6 +8,13 @@ angular.module('planAndGo')
         controllerAs: 'homeCtrl',
         templateUrl: 'views/home.html'
       })
+
+      .when('/create/wer-bringt-was', {
+        controller: 'CreateWerBringtWasCtrl',
+        controllerAs: 'createCtrl',
+        templateUrl: 'views/create-wer-bringt-was.html'
+      })
+
       .otherwise({
         redirectTo: '/'
       });

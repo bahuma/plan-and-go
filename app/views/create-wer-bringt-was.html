@@ -1,0 +1,36 @@
+<div class="view-create-wer-bringt-was">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <span>Ein "Wer-bringt-was" erstellen</span>
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-content layout-padding>
+    <div>
+      <form name="userForm" ng-submit="createCtrl.save()">
+        <md-input-container class="md-block" flex-gt-xs>
+          <label>Titel</label>
+          <input ng-model="createCtrl.plan.title" placeholder="Grillparty">
+        </md-input-container>
+
+        <div class="options md-block" flex-gt-xs>
+          <p>Dinge die mitgebracht werden sollen:</p>
+          <md-input-container class="md-block" flex-gt-xs ng-repeat="option in createCtrl.plan.data.options">
+            <input ng-model="option.value" aria-label="Option {{$index + 1}}">
+          </md-input-container>
+
+          <md-button ng-click="createCtrl.addOption()">Weiteres Ding hinzufügen</md-button>
+        </div>
+
+        <md-input-container class="md-block" flex-gt-xs>
+          <md-checkbox ng-model="createCtrl.plan.data.usersCanAddOptions" aria-label="Jeder kann Optionen hinzufügen">
+            Jeder kann Optionen hinzufügen
+          </md-checkbox>
+        </md-input-container>
+
+        <md-button class="md-primary md-raised" type="submit">Speichern</md-button>
+      </form>
+    </div>
+  </md-content>
+</div>
