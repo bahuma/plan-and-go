@@ -1,0 +1,15 @@
+.view-planning {
+  table.wer-bringt-was {
+    td:nth-child(1) {
+      font-weight: bold;
+      padding-right: 2em;
+    }
+
+    td:nth-child(2) {
+      div.name {
+        margin: 6px 8px;
+        padding: 0 6px;
+      }
+    }
+  }
+}

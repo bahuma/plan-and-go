@@ -1,0 +1,11 @@
+<div class="view-planning">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <span>{{planningCtrl.planning.title}}</span>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-content layout-padding>
+    <div ng-include="'views/plannings/wer-bringt-was.html'" ng-if="planningCtrl.planning.type == 'wer-bringt-was'"></div>
+  </md-content>
+</div>

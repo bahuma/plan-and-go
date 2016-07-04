@@ -22,24 +22,16 @@ angular.module('planAndGo')
       title: '',
       by: '',
       data: {
-        options: [{value:""}],
+        options: [{title:"", user: ""}],
         usersCanAddOptions: false
       }
     };
 
     ctrl.addOption = function() {
-      ctrl.plan.data.options.push({value: ""});
+      ctrl.plan.data.options.push({title:"", user: ""});
     };
 
     ctrl.save = function() {
-      var realOptions = [];
-
-      angular.forEach(ctrl.plan.data.options, function(option) {
-        realOptions.push(option.value);
-      });
-
-      ctrl.plan.data.options = realOptions;
-
       plannings.$add(ctrl.plan);
 
       $mdToast.show($mdToast.simple().textContent('Wer bringt was erstellt').position('bottom left').hideDelay(3000));

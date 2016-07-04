@@ -17,7 +17,7 @@
         <div class="options md-block" flex-gt-xs>
           <p>Dinge die mitgebracht werden sollen:</p>
           <md-input-container class="md-block" flex-gt-xs ng-repeat="option in createCtrl.plan.data.options">
-            <input ng-model="option.value" aria-label="Option {{$index + 1}}">
+            <input ng-model="option.title" aria-label="Option {{$index + 1}}">
           </md-input-container>
 
           <md-button ng-click="createCtrl.addOption()">Weiteres Ding hinzufügen</md-button>

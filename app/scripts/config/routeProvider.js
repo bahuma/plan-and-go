@@ -15,6 +15,12 @@ angular.module('planAndGo')
         templateUrl: 'views/create-wer-bringt-was.html'
       })
 
+      .when('/p/:planningId', {
+        controller: 'PlanningCtrl',
+        controllerAs: 'planningCtrl',
+        templateUrl: 'views/planning.html'
+      })
+
       .otherwise({
         redirectTo: '/'
       });

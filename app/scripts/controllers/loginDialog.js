@@ -9,6 +9,20 @@ angular.module('planAndGo')
 
     ctrl.auth.$onAuthStateChanged(function(firebaseUser) {
       ctrl.user = firebaseUser;
+
+      var userRef = firebase.database().ref('users/' + firebaseUser.uid);
+
+      userRef.on('value', function(snapshot){
+        if (snapshot.val() === null) {
+          console.log('data', snapshot.val());
+          var userProfile = {
+            name: ctrl.user.displayName,
+            email: ctrl.user.email
+          };
+
+          userRef.set(userProfile);
+        }
+      });
     });
 
     ctrl.signInWith = function(provider) {

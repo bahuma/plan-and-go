@@ -1,0 +1,38 @@
+<table class="wer-bringt-was">
+  <tr ng-repeat="option in planningCtrl.planning.data.options">
+    <td>{{option.title}}</td>
+    <td>
+      <div
+        class="name"
+        ng-hide="planningCtrl.getUserData(option.user).name === undefined">
+        {{planningCtrl.getUserData(option.user).name}}
+        <md-icon
+          ng-show="option.user == planningCtrl.user.uid"
+          ng-click="planningCtrl.userBringsNot($index)">close</md-icon>
+      </div>
+
+      <md-button
+        class="md-raised md-primary"
+        ng-show="planningCtrl.getUserData(option.user).name === undefined"
+        ng-click="planningCtrl.userBrings($index)">
+        Ich bringe das mit!
+      </md-button>
+    </td>
+  </tr>
+</table>
+
+<div class="md-block" ng-show="showAddOption">
+  <md-input-container>
+    <label>Titel</label>
+    <input ng-model="newItemName" aria-label="Titel" md-autofocus="showAddOption">
+  </md-input-container>
+  <md-button
+    class="md-raised md-primary"
+    ng-click="planningCtrl.addOption(newItemName); showAddOption = false; newItemName = ''">Hinzufügen</md-button>
+</div>
+
+
+<md-button
+  ng-show="planningCtrl.planning.data.usersCanAddOptions"
+  ng-click="showAddOption = true"
+  ng-hide="showAddOption">Etwas hinzufügen</md-button>
